@@ -1,0 +1,563 @@
+/* Variabili di colore per il tema del sito */
+:root {
+    --blu: #003366;
+    --ciano: #00b5ac;
+    --bg: #f8f9fa;
+    --card-bg: #ffffff;
+    --text: #333333;
+    --bordo-grigio: #e9ecef;
+    --header-overlay: rgba(255, 255, 255, 0.9);
+}
+
+html { 
+    overflow-x: hidden;
+    overflow-y: auto; 
+}
+
+/* Stili globali per il corpo del documento */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    color: var(--text);
+    background-color: var(--bg);
+}
+
+h1, h2 {
+    color: var(--blu);
+    border-left: 5px solid var(--ciano);
+    padding-left: 15px;
+    margin-bottom: 30px;
+}
+
+/* Stili per l'intestazione del sito */
+header {
+    background-image: url('img/header-bg.png');
+    background-size: cover;
+    background-position: center;
+    padding: 80px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ /* Sovrapposizione semi-trasparente per migliorare la leggibilità del testo sull'immagine di sfondo */
+.header-overlay {
+    background-color: var(--header-overlay);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Stili per il logo */
+.logo {
+    max-width: 200px;
+    height: auto;
+    background-color: transparent;
+}
+
+/* Stili per il titolo del report */
+.titolo-report {
+    font-family: 'Arial Black', sans-serif;
+    line-height: 0.85;
+    margin-top: 20px;
+    letter-spacing: -1px;
+}
+
+/* Trasformazione del testo del titolo in maiuscolo */
+.titolo-report span {
+    display: block;
+    text-transform: uppercase;
+}
+
+/* Stili per le righe del titolo del report */
+.riga-bil {
+    color: var(--blu);
+    font-size: 1.85rem;
+}
+
+.riga-sos {
+    color: var(--ciano);
+    font-size: 1.5rem;
+}
+
+.riga-anno {
+    color: var(--blu);
+    font-size: 4.75rem;
+    font-weight: bold;
+    margin-top: -5px;
+}
+
+/* Stili per la barra di navigazione dell'indice */
+.nav-indice {
+    position: -webkit-sticky; /* Supporto per Safari */
+    position: sticky;
+    top: 0;
+    background-color: var(--bg);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 900;
+    border-bottom: 1px solid var(--bordo-grigio);
+    border-top: 5px solid var(--ciano);
+    color: var(--nero);
+}
+
+.nav-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.nav-logo {
+    height: 35px; 
+    width: auto;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.nav-logo:hover { opacity: 0.8;}
+
+.nav-indice ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    flex-grow: 1;
+    padding: 0;
+    margin: 0;
+    gap: 30px;
+}
+
+.nav-indice a {
+    color: var(--blu);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+.nav-indice a:hover { color: var(--ciano);}
+
+ /* Stili per la sezione introduttiva */
+#hero {
+    background-color: var(--bianco);
+    text-align: left;
+    padding: 20px 0;
+}
+
+#hero h1 {
+    font-size: clamp(1.6rem, 3vw + 1rem, 3rem);
+    color: var(--blu);
+    margin-bottom: 20px;
+}
+
+#hero p {
+    font-size: 1.4rem;
+    color: var(--nero);
+    line-height: 1.7;
+}
+
+/* Stili per le sezioni principali del sito */
+section {
+    width: 100%;
+    padding: 20px 0;
+    /* Regolazione per evitare che le sezioni finiscano sotto la nav bar al clic */
+    scroll-margin-top: 70px;
+}
+
+/* Contenitore centrale con larghezza massima e padding */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+ /* Stili per il layout a griglia delle sezioni */
+.container-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr;
+}
+
+#dettagli {
+    padding-bottom: 0;
+}
+
+/* Stili per le card */
+.card {
+    background: var(--bianco);
+    padding: 25px 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    text-align: center;
+    border-top: 4px solid var(--blu);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--card-bg);
+    color: var(--text);
+}
+
+.card h3 {
+    color: var(--ciano);
+    font-size: 2rem;
+    margin: 0;
+}
+
+/* Stili per la sezione degli approfondimenti */
+.deep-dive {
+    padding: 40px;
+    margin-bottom: 40px;
+    border-radius: 15px;
+    background-color: var(--card-bg);
+    color: var(--text);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.deep-dive h2 {
+    font-size: 2rem;
+    color: var(--blu);
+    border-bottom: 2px solid var(--ciano);
+    display: inline-block;
+    padding-bottom: 10px;
+    border-left: none;
+    padding-left: 0;
+}
+
+.deep-dive h3 {
+    font-size: 1.5rem;
+    color: var(--blu);
+}
+
+.sottosezione {
+    margin-top: 30px;
+    padding-top: 5px;
+    border-top: 1px solid var(--bordo-grigio);
+}
+
+.sottosezione h2 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: var(--blu);
+}
+
+.deep-dive p {
+    text-align: justify;
+    font-size: 1.05rem;
+}
+
+/* Stili alternativi per la sezione degli approfondimenti */
+.alt-bg {
+    background-color: var(--blu);
+    color: #ffffff !important;
+}
+
+.alt-bg p { color: #ffffff !important;}
+
+.alt-bg h2, .alt-bg h3 { color: var(--ciano); }
+
+.alt-bg .sottosezione { border-top-color: rgba(255, 255, 255, 0.1); }
+
+.alt-bg .sottosezione h2 { color: #e6f7f5; }
+
+/* Stili per la sezione download dei report */
+#download {
+    text-align: left;
+    background-color: var(--bianco);
+    padding-top: 0;
+}
+
+.report-corrente {
+    background-color: var(--card-bg);
+    color: var(--text);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.report-corrente p {
+    margin: 0;
+    font-weight: bold;
+    color: var(--blu);
+}
+
+.btn-link {
+    color: var(--blu);
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 1.3rem;
+    transition: color 0.3s;
+}
+
+.archivio-container {
+    display: inline-block;
+    text-align: left;
+    margin-top: 0;
+}
+
+.archivio-container summary {
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--blu);
+    text-decoration: underline;
+    list-style: none;
+    display: inline-block;
+}
+
+/* Aggiunta di frecce per indicare lo stato aperto/chiuso dell'archivio */
+.archivio-container summary::after { content: ' \25be'; }
+.archivio-container[open] summary::after { content: ' \25b4'; }
+
+/* Stili per la lista dei PDF nell'archivio */
+.lista-pdf {
+    list-style: none;
+    padding: 15px 0;
+    margin: 0;
+    text-align: left;
+    color: var(--nero);
+}
+
+.lista-pdf a {
+    color: var(--nero);
+    text-decoration: none;
+}
+
+.btn-link:hover, .archivio-container summary:hover, .lista-pdf a:hover { color: var(--ciano); }
+
+ /* Stili per il footer del sito */
+footer {
+    background-color: var(--blu);
+    color: #ffffff !important;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+footer p { color: #ffffff !important;}
+
+/* Stili per lo skip link per l'accessibilità */
+.skip-link {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.skip-link:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: 10px;
+    background: var(--ciano);
+    color: white;
+}
+
+/* Contenitore fisso per il banner dei cookie e il tasto back-to-top */
+.sottocontenitore {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Allinea il tasto back-to-top a destra */
+    z-index: 10000;
+    pointer-events: none; /* Permette di cliccare attraverso le aree vuote */
+}
+
+/* Stili per il banner dei cookie */
+.cookie-banner {
+    pointer-events: auto; /* Ripristina la cliccabilità dell'elemento */
+    width: 100%;
+    background-color: var(--blu);
+    color: #ffffff !important;
+    padding: 20px 0;
+    position: relative; /* Necessario per il posizionamento del testo "continua" */
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.2);
+}
+    
+.cookie-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.cookie-banner p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: #ffffff !important;
+}
+
+.cookie-btn {
+    background-color: var(--ciano);
+    color: var(--blu);
+    border: none;
+    padding: 8px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    transition: opacity 0.3s;
+}
+
+.cookie-btn:hover { opacity: 0.9;}
+
+.cookie-ignore {
+    color: #ffffff !important;
+    opacity: 0.5; 
+    font-size: 0.7rem;
+    cursor: pointer;
+    margin-top: 5px;
+    top: 5px;
+    left: 40px;
+    transition: opacity 0.3s;
+}
+
+.cookie-ignore:hover { opacity: 1; } /* Aumenta la visibilità al passaggio del mouse */
+
+/* Stili per il pulsante "Torna su" */
+.back-to-top {
+    pointer-events: auto; /* Ripristina la cliccabilità dell'elemento */
+    background-color: var(--bianco);
+    border: 2px solid var(--blu);
+    color: var(--ciano);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    margin-right: 15px;
+    margin-bottom: 20px; /* Distanza fissa dal banner o dal fondo */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* Opacità ridotta per non disturbare la lettura dei contenuti */
+    opacity: 0.6;
+    transition: opacity 0.3s, border-color 0.3s, color 0.3s;
+}
+
+.back-to-top:hover {
+    opacity: 1;
+    border-color: var(--ciano);
+    color: var(--blu);
+}
+
+/* Stili per il pulsante del tema */
+.theme-label {
+    cursor: pointer;
+    font-size: 1.4rem;
+    display: flex;
+    margin-left: 20px;
+    padding: 5px;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+/* Nasconde l'input tecnico dalla visualizzazione */
+.theme-checkbox { display: none;}
+
+.theme-label:hover { transform: scale(1.1); }
+
+/* Transizione al tema scuro tramite selettore */
+body:has(#theme-toggle:checked) {
+    --bg: #040506;
+    --text: #eae9fc;
+    --card-bg: #1e1e1e;
+    --grigio: #1e1e1e;
+    --header-overlay: rgba(0, 0, 0, 0.85);
+    --bianco: #1e1e1e;
+    /* Trasforma il blu in ciano per far risaltare titoli e link nel buio */
+    --blu: var(--ciano); 
+}
+
+body:has(#theme-toggle:checked) .icon-moon { display: none; }
+body:has(#theme-toggle:checked) .icon-sun { display: block; }
+
+/* Gestione icone: mostra solo quella corretta per lo stato attivo */
+.icon-sun { display: none; color: #ffffff; }
+.icon-moon { display: block; color: var(--blu); }
+
+/* Ottimizzazione del pulsante back-to-top per il tema scuro */
+body:has(#theme-toggle:checked) .back-to-top {
+    background-color: var(--bg);
+    border-color: var(--ciano);
+    color: var(--ciano);
+    box-shadow: 0 4px 15px rgba(0, 181, 172, 0.3);
+}
+
+/* Garantisce che il logo nella nav bar rimanga visibile */
+body:has(#theme-toggle:checked) .nav-indice {
+    background-color: #1a1a1a;
+    border-bottom: 1px solid #333;
+}
+
+/* Migliora il contrasto dei link nella navigazione scura */
+body:has(#theme-toggle:checked) .nav-indice a { color: var(--text);}
+
+body:has(#theme-toggle:checked) .nav-indice a:hover { color: var(--ciano); }
+
+body:has(#theme-toggle:checked) .report-corrente { background-color: #333333; }
+
+/* Modifica dei testi se il tema è scuro */
+body:has(#theme-toggle:checked) h1, body:has(#theme-toggle:checked) h2 { color: var(--ciano); }
+
+body:has(#theme-toggle:checked) .riga-bil, body:has(#theme-toggle:checked) .riga-anno { color: var(--white); }
+
+body:has(#theme-toggle:checked) .alt-bg h2 {
+    color: #ffffff;
+    border-bottom-color: #ffffff !important
+}
+
+body:has(#theme-toggle:checked) .alt-bg .sottosezione { border-top-color: #ffffff !important; }
+
+body:has(#theme-toggle:checked) .alt-bg h3 { color: #ffffff !important; }
+
+/* Ottimizzazione del pulsante cookie per contrasto in modalità scura */
+body:has(#theme-toggle:checked) .cookie-btn {
+    background-color: #ffffff; 
+    color: var(--blu);         
+}
+
+/* Media queries per la responsività */
+@media (min-width: 600px) {
+    .container-grid { grid-template-columns: repeat(2, 1fr); }
+    .nav-indice ul {
+        justify-content: flex-start;
+        padding: 15px 20px;
+        overflow-x: auto;
+        white-space: nowrap;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .nav-logo { display: none;}
+    .nav-indice ul {
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+@media (min-width: 900px) {
+    .container-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+@media (max-width: 768px) {
+    .container { padding: 0 20px; }
+    .deep-dive { padding: 25px; }
+    .riga-anno { font-size: 3.5rem; }
+}
+
+/* Riduzione delle animazioni per utenti che preferiscono meno movimento */
+@media (prefers-reduced-motion: reduce) { .fill { transition: none; }}
