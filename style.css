@@ -9,9 +9,10 @@
     --header-overlay: rgba(255, 255, 255, 0.9);
 }
 
-html { 
+html, body { 
     overflow-x: hidden;
     overflow-y: auto; 
+    max-width: 100%;
 }
 
 /* Stili globali per il corpo del documento */
@@ -458,7 +459,8 @@ footer p { color: #ffffff !important;}
     cursor: pointer;
     font-size: 1.4rem;
     display: flex;
-    margin-left: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
     padding: 5px;
     border-radius: 50%;
     transition: transform 0.3s;
@@ -556,7 +558,43 @@ body:has(#theme-toggle:checked) .cookie-btn {
 @media (max-width: 768px) {
     .container { padding: 0 20px; }
     .deep-dive { padding: 25px; }
-    .riga-anno { font-size: 3.5rem; }
+}
+
+@media (max-width: 445px) {
+    /* Mantiene tutti gli elementi su un unico asse orizzontale */
+    .nav-flex {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 15px;
+        gap: 10px;
+    }
+
+    /* Gestisce l'elenco dei link per evitare lo sforamento del container */
+    .nav-indice ul {
+        display: flex;
+        gap: 12px;
+        overflow-x: auto; /* Consente lo scorrimento dei link se lo spazio termina */
+        white-space: nowrap;
+        flex-grow: 1;
+        scrollbar-width: none; /* Nasconde la barra su Firefox */
+    }
+
+    .nav-indice ul::-webkit-scrollbar {
+        display: none; /* Nasconde la barra su Chrome e Safari */
+    }
+
+    .nav-indice a {
+        font-size: 0.8rem;
+    }
+
+    .theme-label {
+        margin: 0;
+        flex-shrink: 0; /* Impedisce la deformazione dell'icona */
+        padding-left: 0;
+    }
+    
 }
 
 /* Riduzione delle animazioni per utenti che preferiscono meno movimento */
