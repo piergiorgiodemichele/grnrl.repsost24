@@ -9,9 +9,8 @@
     --header-overlay: rgba(255, 255, 255, 0.9);
 }
 
-html, body { 
-    overflow-x: hidden;
-    overflow-y: auto; 
+html { 
+    scroll-behavior: smooth;
     max-width: 100%;
 }
 
@@ -22,6 +21,7 @@ body {
     margin: 0;
     color: var(--text);
     background-color: var(--bg);
+    overflow-x: clip;
 }
 
 h1, h2 {
@@ -602,13 +602,9 @@ body:has(#theme-toggle:checked) .cookie-btn {
         scrollbar-width: none; /* Nasconde la barra su Firefox */
     }
 
-    .nav-indice ul::-webkit-scrollbar {
-        display: none; /* Nasconde la barra su Chrome e Safari */
-    }
+    .nav-indice ul::-webkit-scrollbar { display: none; } /* Nasconde la barra su Chrome e Safari */
 
-    .nav-indice a {
-        font-size: 0.8rem;
-    }
+    .nav-indice a { font-size: 0.8rem;}
 
     .theme-label {
         margin: 0;
